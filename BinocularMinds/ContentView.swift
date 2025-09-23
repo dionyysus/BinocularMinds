@@ -11,14 +11,12 @@ import RealityKitContent
 
 struct ContentView: View {
     @State var size: CGFloat = 1.0
-    let models = ["Can", "Faz", "Gizem", "July", "Nat", "Panchito", "Scene"]
-    @State private var selectedModel = "Can" 
+    @Bindable var parameters: ModelParameters
 
     var body: some View {
-       
-            Model3D(named: selectedModel, bundle: realityKitContentBundle)
+        Model3D(named: parameters.selectedModel, bundle: realityKitContentBundle)
                 .padding(.bottom, 50)
-                .scaleEffect(size)
+                .scaleEffect(parameters.scaleValue)
                 .gesture(
                     MagnifyGesture(minimumScaleDelta: 0)
                         .onChanged { value in
@@ -26,13 +24,10 @@ struct ContentView: View {
                         }
                         .targetedToAnyEntity() // it's for specifiying the 3d object in the scene
                 )
-        VStack {
-            ObjectPicker(selectedModel: $selectedModel, models: models)
-            SizeSlider(size: $size)
-        }
+        //ControlsView(parameters: parameters)
     }
 }
  
 #Preview {
-    ContentView()
+    ContentView(parameters: ModelParameters())
 }
