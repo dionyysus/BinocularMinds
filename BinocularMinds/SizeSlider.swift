@@ -16,7 +16,7 @@ struct SizeSlider: View {
         HStack {
             Slider(
                 value: $size,
-                in: 0.0...3.0,
+                in: 0.5...3.0,
             ) {
             }
             Text("\(size, specifier: "%.2f")")
