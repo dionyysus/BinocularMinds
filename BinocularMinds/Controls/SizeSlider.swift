@@ -14,17 +14,10 @@ struct SizeSlider: View {
     
     var body: some View {
         HStack {
-            Slider(
-                value: $size,
-                in: 0.5...3.0,
-            ) {
+            Slider( value: $size, in: 0.5...3.0) {
             }
             Text("\(size, specifier: "%.2f")")
         }
         .frame(width: 250)
     }
 }
-
-//#Preview {
-//    SizeSlider(size: $size )
-//}

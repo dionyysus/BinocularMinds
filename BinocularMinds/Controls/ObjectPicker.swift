@@ -33,10 +33,3 @@ struct ObjectPicker: View {
         .tabViewStyle(.page)
     }
 }
-
-
-//@State var size: CGFloat = 1.0
-//@Bindable var parameters: ModelParameters
-//
-//var body: some View {
-//    Model3D(named: parameters.selectedModel, bundle: realityKitContentBundle)

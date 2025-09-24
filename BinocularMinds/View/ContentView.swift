@@ -24,7 +24,6 @@ struct ContentView: View {
                         }
                         .targetedToAnyEntity() // it's for specifiying the 3d object in the scene
                 )
-        //ControlsView(parameters: parameters)
     }
 }
  

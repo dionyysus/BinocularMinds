@@ -17,10 +17,14 @@ struct ControlsView: View {
     var body: some View {
         VStack(spacing: 20) {
             VStack(spacing: 20) {
-            ObjectPicker(selectedModel: $parameters.selectedModel, models: models, parameters: parameters)
+                ObjectPicker(selectedModel: $parameters.selectedModel, models: models, parameters: parameters)
                 Spacer()
-            SizeSlider(size: $parameters.scaleValue)
-        }
+                SizeSlider(size: $parameters.scaleValue)
+                
+                Rotations(parameters: parameters)
+                
+//                ADD TILTING
+            }
             
             Button("Add Object") {
                 openWindow(id: "3D Model")
