@@ -1,0 +1,42 @@
+//
+//  ObjectPicker.swift
+//  BinocularMinds
+//
+//  Created by Can Dindar on 23/09/25.
+//
+
+import SwiftUI
+import RealityKit
+import RealityKitContent
+
+struct ObjectPicker: View {
+    @Binding var selectedModel: String
+    let models: [String]
+    @Bindable var parameters: ModelParameters
+
+    
+    var body: some View {
+        TabView(selection: $selectedModel) {
+            ForEach(models, id: \.self) { model in
+                VStack(spacing: 50) {
+                    Model3D(named: parameters.selectedModel, bundle: realityKitContentBundle)
+                        .padding(.bottom, 50)
+                        .frame(width: 60, height: 60)
+                    
+                    Text(model)
+                        .font(.headline)
+                        .padding(.top, 50)
+                }
+                .tag(model)
+            }
+        }
+        .tabViewStyle(.page)
+    }
+}
+
+
+//@State var size: CGFloat = 1.0
+//@Bindable var parameters: ModelParameters
+//
+//var body: some View {
+//    Model3D(named: parameters.selectedModel, bundle: realityKitContentBundle)

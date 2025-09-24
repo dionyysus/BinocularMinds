@@ -12,8 +12,8 @@ struct BinocularMindsApp: App {
     @State private var parameters = ModelParameters()
     
     var body: some Scene {
-        WindowGroup("Main") {
-            MainView()
+        WindowGroup("Controls", id: "Controls") {
+            ControlsView(parameters: parameters)
         }
         .defaultSize(CGSize(width: 400, height: 600))
         
@@ -21,14 +21,6 @@ struct BinocularMindsApp: App {
             ContentView(parameters: parameters)
         }
         .windowStyle(.volumetric)
-        
-        WindowGroup("Controls", id: "Controls") {
-            ControlsView(parameters: parameters)
-        }
-        .defaultSize(CGSize(width: 400, height: 600))
-
-        
-
 
     }
 }
