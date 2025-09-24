@@ -12,21 +12,21 @@ struct ControlsView: View {
     
     @Bindable var parameters: ModelParameters
     let models = ["Can", "Faz", "Gizem", "July", "Nat", "Panchito", "Scene"]
+    
+    @State private var selectedModel: String = "Can"
         
     var body: some View {
         VStack(spacing: 20) {
             VStack(spacing: 20) {
-                ObjectPicker(selectedModel: $parameters.selectedModel, models: models, parameters: parameters)
+                ObjectPicker(selectedModel: $selectedModel, models: models, parameters: parameters)
                 Spacer()
                 SizeSlider(size: $parameters.scaleValue)
                 
                 Rotations(parameters: parameters)
-                
-//                ADD TILTING
             }
             
             Button("Add Object") {
-                openWindow(id: "3D Model")
+                openWindow(id: "3D \(selectedModel)")
             }
             .padding()
 
