@@ -12,9 +12,10 @@ import RealityKitContent
 struct ContentView: View {
     @State var size: CGFloat = 1.0
     @Bindable var parameters: ModelParameters
+    var modelName: String
 
     var body: some View {
-        Model3D(named: parameters.selectedModel, bundle: realityKitContentBundle)
+        Model3D(named: modelName, bundle: realityKitContentBundle)
                 .padding(.bottom, 50)
                 .scaleEffect(parameters.scaleValue)
                 .gesture(
@@ -29,5 +30,5 @@ struct ContentView: View {
 }
  
 #Preview {
-    ContentView(parameters: ModelParameters())
+    ContentView(parameters: ModelParameters(), modelName: "Can")
 }
