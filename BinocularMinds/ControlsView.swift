@@ -15,7 +15,20 @@ struct ControlsView: View {
     var body: some View {
         VStack {
             ObjectPicker(selectedModel: $parameters.selectedModel, models: models)
+            Text("Scale")
+                .font(.title)
             SizeSlider(size: $parameters.scaleValue)
+            Text("Rotation")
+                .font(.title)
+            Text("X axis")
+                .font(.caption)
+            Slider(value: $parameters.angleDegreeX, in: -1...1, label: { Text("Rotate X") })
+            Text("Y axis")
+                .font(.caption)
+            Slider(value: $parameters.angleDegreeY, in: -1...1, label: { Text("Rotate Y") })
+            Text("Z axis")
+                .font(.caption)
+            Slider(value: $parameters.angleDegreeZ, in: -1...1, label: { Text("Rotate Z") })
         }
     }
 }
