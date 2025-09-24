@@ -21,6 +21,7 @@ struct ObjectPicker: View {
                 VStack(spacing: 50) {
                     Model3D(named: model, bundle: realityKitContentBundle)
                         .padding(.bottom, 50)
+                        .frame(width: 60, height: 60)
                         .scaleEffect(0.5)
                     Text(model)
                         .font(.headline)

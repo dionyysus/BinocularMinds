@@ -51,5 +51,20 @@ struct BinocularMindsApp: App {
             ContentView(parameters: parameters, modelName: "Scene")
         }
         .windowStyle(.volumetric)
+        
+        WindowGroup("3D Pancakes", id: "3D Pancakes") {
+            ContentView(parameters: parameters, modelName: "Pancakes")
+        }
+        .windowStyle(.volumetric)
+        
+        WindowGroup("3D Ship", id: "3D Ship") {
+            ContentView(parameters: parameters, modelName: "Ship")
+        }
+        .windowStyle(.volumetric)
+        
+        WindowGroup("3D Teapot", id: "3D Teapot") {
+            ContentView(parameters: parameters, modelName: "Teapot")
+        }
+        .windowStyle(.volumetric)
     }
 }

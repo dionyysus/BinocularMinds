@@ -11,7 +11,7 @@ struct ControlsView: View {
     @Environment(\.openWindow) var openWindow
     
     @Bindable var parameters: ModelParameters
-    let models = ["Can", "Faz", "Gizem", "July", "Nat", "Panchito", "Scene"]
+    let models = ["Can", "Faz", "Gizem", "July", "Nat", "Panchito", "Scene", "Teapot", "Ship", "Pancakes"]
     
     @State private var selectedModel: String = "Can"
         
