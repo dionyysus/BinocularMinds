@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct ControlsView: View {
+    @Environment(\.openWindow) var openWindow
     
     @Bindable var parameters: ModelParameters
     let models = ["Can", "Faz", "Gizem", "July", "Nat", "Panchito", "Scene"]
     
+    @State var selectedModel: String = "Can"
+    
     var body: some View {
         VStack {
-            ObjectPicker(selectedModel: $parameters.selectedModel, models: models)
+            HStack {
+                ObjectPicker(selectedModel: $selectedModel, models: models)
+                Button("Create object") {
+                    parameters.openModels.append(selectedModel)
+                }
+            }
             Text("Scale")
                 .font(.title)
             SizeSlider(size: $parameters.scaleValue)

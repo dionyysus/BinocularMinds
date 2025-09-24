@@ -13,5 +13,5 @@ class ModelParameters {
     var angleDegreeX: Float = 0.0
     var angleDegreeY: Float = 0.0
     var angleDegreeZ: Float = 0.0
-    var selectedModel: String = "Can"
+    var openModels: [String] = []
 }
