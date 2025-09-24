@@ -25,6 +25,9 @@ struct ContentView: View {
                         }
                         .targetedToAnyEntity() // it's for specifiying the 3d object in the scene
                 )
+                .rotation3DEffect(Angle(degrees: (Double(parameters.angleDegreeX)*300)), axis: (x: 1, y: 0, z: 1))
+                .rotation3DEffect(Angle(degrees: (Double(parameters.angleDegreeY)*300)), axis: (x: 0, y: 1, z: 1))
+                .rotation3DEffect(Angle(degrees: (Double(parameters.angleDegreeZ)*300)), axis: (x: 0, y: 0, z: 1))
         //ControlsView(parameters: parameters)
     }
 }
