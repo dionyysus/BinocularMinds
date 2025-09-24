@@ -10,9 +10,10 @@ import Foundation
 @Observable
 class ModelParameters {
     let id: UUID = UUID() 
+    var selectedModel: String = "Can"
     var scaleValue: CGFloat = 0.5
     var angleDegreeX: Float = 0.0
     var angleDegreeY: Float = 0.0
     var angleDegreeZ: Float = 0.0
-    var selectedModel: String = "Can"
+    var openModels: [String] = []
 }

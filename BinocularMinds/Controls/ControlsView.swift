@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct ControlsView: View {
+    @Environment(\.openWindow) var openWindow
     
     @Bindable var parameters: ModelParameters
     let models = ["Can", "Faz", "Gizem", "July", "Nat", "Panchito", "Scene"]
-    
-    @Environment(\.openWindow) private var openWindow
-    
+        
     var body: some View {
         VStack(spacing: 20) {
             VStack(spacing: 20) {
@@ -30,6 +29,7 @@ struct ControlsView: View {
                 openWindow(id: "3D Model")
             }
             .padding()
+
         }
     }
 }

@@ -12,9 +12,10 @@ import RealityKitContent
 struct ContentView: View {
     @State var size: CGFloat = 1.0
     @Bindable var parameters: ModelParameters
+    var modelName: String
 
     var body: some View {
-        Model3D(named: parameters.selectedModel, bundle: realityKitContentBundle)
+        Model3D(named: modelName, bundle: realityKitContentBundle)
                 .padding(.bottom, 50)
                 .scaleEffect(parameters.scaleValue)
                 .gesture(
@@ -27,9 +28,10 @@ struct ContentView: View {
                 .rotation3DEffect(Angle(degrees: (Double(parameters.angleDegreeX)*300)), axis: (x: 1, y: 0, z: 1))
                 .rotation3DEffect(Angle(degrees: (Double(parameters.angleDegreeY)*300)), axis: (x: 0, y: 1, z: 1))
                 .rotation3DEffect(Angle(degrees: (Double(parameters.angleDegreeZ)*300)), axis: (x: 0, y: 0, z: 1))
+
     }
 }
  
 #Preview {
-    ContentView(parameters: ModelParameters())
+    ContentView(parameters: ModelParameters(), modelName: "Can")
 }

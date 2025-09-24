@@ -18,7 +18,9 @@ struct BinocularMindsApp: App {
         .defaultSize(CGSize(width: 400, height: 600))
         
         WindowGroup("3D Model", id: "3D Model") {
-            ContentView(parameters: parameters)
+            ForEach(parameters.openModels, id: \.self) { model in
+                ContentView(parameters: parameters, modelName: model)
+            }
         }
         .windowStyle(.volumetric)
 
